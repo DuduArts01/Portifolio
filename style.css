@@ -1,0 +1,159 @@
+/*General Style*/
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  
+  font-family: "Poppins", sans-serif;
+   
+}
+
+body{
+  background-color: #000;
+  height: 100vh;
+}
+
+.interface{
+  margin: 0 auto;
+}
+
+.flex{
+  display: flex;
+}
+
+.btn-contato button{
+  padding: 25px 50px;
+  font-size: 25px;
+  font-weight: 600;
+  background-color: #ff0000;
+  border: 0;
+  border-radius: 35px;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.btn-contato button:hover{
+  box-shadow: 0 0 8px #ff0000;
+  transform: scale(1.05);
+}
+
+h2.title{
+  color: #fff;
+  font-size: 58px;
+  text-align: center;
+}
+
+h2.title span{
+  color: #ff0000;
+}
+
+/* Header Style */
+header{
+  padding: 40px 4%;
+}
+
+header > .interface {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header a{
+  color: #5c5c5c;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 23px;
+}
+
+header a:hover{
+  color: #fff;
+  transform: scale(1.05);
+  transition: .2s;
+}
+
+header nav ul{
+  list-style-type: none;
+}
+
+header nav ul li{
+  display: inline-block;
+  padding: 0 40px;
+}
+
+/* Top Web Style */
+section.top-web{
+  padding: 40px 4%;
+}
+
+section.top-web .flex{
+  align-items: center;
+  justify-content: center;
+  gap: 90px;
+}
+
+.top-web h1{
+  color: #fff;
+  font-size: 75px;
+  line-height: 70px;
+}
+
+.top-web .txt-top-web h1 span{
+  color: #ff0000;
+  font-size: 100px;
+}
+
+.top-web .txt-top-web p{
+  color: #fff;
+  margin: 40px 0;
+  font-size: 25px;
+}
+
+.top-web .img-top-web img{
+  position: relative;
+  animation: tofloat 2s ease-in-out infinite alternate;
+}
+
+@keyframes tofloat{
+  0%{
+    top: 0;
+  }
+
+  100%{
+    top: 30px;
+  }
+}
+
+section.specialty{
+  padding: 40px 4%;
+}
+
+section.specialty .flex{
+  gap: 60px;
+}
+
+.specialty .specialty-box{
+  color: #fff;
+  padding: 60px;
+  border-radius: 20px;
+  margin-top: 55px;
+  transition: .2s;
+}
+
+.specialty .specialty-box:hover{
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #ffffff88;
+}
+
+.specialty .specialty-box i{
+  font-size: 100px;
+  color: #ff0000;
+}
+
+.specialty .specialty-box h3{
+  font-size: 50px;
+  margin: 15px 0;
+}
+
+.specialty .specialty-box p{
+  font-size: 18px;
+}
