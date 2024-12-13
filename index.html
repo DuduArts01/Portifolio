@@ -12,6 +12,9 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <!--Bootstrap End-->
     <link rel="stylesheet" href="style.css">
+
+    <script src="menu.js" defer></script>
+
     <title>DuduTech</title>
 </head>
 <body>
@@ -19,7 +22,7 @@
         <div class="interface">
             <div class="logo">
                 <a href="#">
-                    <img src="data/logo/dudutech.png" alt="Logo Dudu Tech">
+                    <img src="data/logo/dudutech.png" alt="Logo Dudu Tech" class="logo">
                 </a>
             </div><!--logo-->
 
@@ -37,6 +40,30 @@
                     <button>Contato</button>
                 </a>
             </div><!--btn-contato-->
+
+            <div class="btn-open-menu" id="btn-menu">
+                <i class="bi bi-list"></i>
+            </div>
+
+            <div class="menu-mobile" id="menu-mobile"> 
+                <div class="btn-close">
+                    <i class="bi bi-x-lg"></i>
+                </div>
+
+                <nav>
+                    <ul>
+                        <li><a href="#" target="_self">Início</a></li>
+                        <li><a href="#" target="_self">Especialidades</a></li>
+                        <li><a href="#" target="_self">Sobre</a></li>
+                        <li><a href="#" target="_self">Projetos</a></li>
+                        <li><a href="#" target="_self">Contato</a></li>
+                        
+                    </ul>
+                </nav>
+
+            </div><!--meu-mobile-->
+
+            <div class="overlay-menu" id="overlay-menu"></div><!--overlay-menu-->
         </div> <!--interface-->
     </header>
     
@@ -46,7 +73,7 @@
                 <div class="flex">
                     <div class="txt-top-web">
                         <h1>TRANSFORMANDO IDEIAS EM REALIDADE DIGITAL<span>.</span></h1>
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum modi quo tempora aperiam natus sint unde temporibus dolorum sit illo omnis, incidunt odit exercitationem aliquid beatae, repellat ab voluptatum assumenda. Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus hic, corrupti culpa, molestiae sed illo inventore accusantium, omnis velit neque soluta ea reiciendis expedita facere fugit quae perspiciatis dolorem debitis? Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo culpa architecto atque harum, ducimus perspiciatis. Harum assumenda quod id fugit repudiandae ea delectus similique, ducimus ex totam, impedit aspernatur magni?</p>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum modi quo tempora aperiam natus sint unde temporibus dolorum sit illo omnis, incidunt odit exercitationem aliquid beatae, repellat ab voluptatum assumenda.</p>
 
                         <div class="btn-contato">
                             <a href="#" target="_blank">
@@ -56,7 +83,7 @@
                     </div><!--txt-top-web-->
 
                     <div class="img-top-web">
-                        <img src="data/man/man_pose.png" alt="Man Pose" style="width: 700px;">
+                        <img src="data/man/man_pose.png" alt="Man Pose">
                     </div><!--img-top-web-->
                 </div><!--flex-->
             </div><!--interface-->
@@ -75,7 +102,7 @@
                     <div class="specialty-box">
                         <i class="bi bi-file-earmark-play"></i>
                         <h3>Edição de Vídeos</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio fuga voluptates id quos inventore ipsa, saepe sed, reiciendis unde eligendi officiis at. Dolorum neque alias rerum architecto, velit reprehenderit quidem.</p>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corrupti et cum, expedita libero ratione nam amet fuga placeat fugit illo, error quaerat molestiae voluptatum, ipsam provident perspiciatis ipsa optio fugiat!.</p>
                     </div><!--specialty-box-->
 
                     <div class="specialty-box">
@@ -133,7 +160,7 @@
 
         <section class="form">
             <div class="interface">
-                <h2 class="title">DEIXE SUA MENSAGEM<span>AQUI.</span></h2>
+                <h2 class="title">DEIXE SUA MENSAGEM <span>AQUI.</span></h2>
                 <form action="">
                     <input type="text" id="" placeholder="Seu nome(Completo):" required>
                     <input type="text" id="" placeholder="Seu email:" required>
@@ -150,7 +177,7 @@
             <div class="line-footer">
                 <div class="flex">
                     <div class="logo-footer">
-                        <img src="data/logo/dudutech.png" alt="logo">
+                        <img src="data/logo/dudutech.png" alt="logo" class="logo">
                     </div><!--logo-footer-->
                     <div class="btn-social">
                         <a href="#" target="_blank"><button><i class="bi bi-instagram"></i></button></a>
