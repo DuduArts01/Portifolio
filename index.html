@@ -161,11 +161,11 @@
         <section class="form">
             <div class="interface">
                 <h2 class="title">DEIXE SUA MENSAGEM <span>AQUI.</span></h2>
-                <form action="">
-                    <input type="text" id="" placeholder="Seu nome(Completo):" required>
-                    <input type="text" id="" placeholder="Seu email:" required>
-                    <input type="text" id="" placeholder="Seu telefone:">
-                    <textarea name="" id="" placeholder="Sua mensagem" required></textarea>
+                <form method="post" action="send.php">
+                    <input type="text" id="name" name="name" placeholder="Seu nome(Completo):" required>
+                    <input type="text" id="email" name="email" placeholder="Seu email:" required>
+                    <input type="text" id="phone" name="phone" placeholder="Seu telefone:">
+                    <textarea id="message" name="message" placeholder="Sua mensagem" required></textarea>
                     <div class="btn-send"><input type="submit" value="SEND"></div>
                 </form>
             </div><!--interface-->
