@@ -69,6 +69,10 @@ form .btn-send input[type=submit]:hover {
   text-decoration: none;
 }
 
+.indent{
+  text-indent: 1em;
+}
+
 /* Header Style */
 header {
   padding: 40px 4%;
@@ -203,6 +207,7 @@ section.top-web .flex {
 .top-web .img-top-web img {
   position: relative;
   animation: tofloat 2s ease-in-out infinite alternate;
+  
 }
 
 @keyframes tofloat {
@@ -279,7 +284,7 @@ section.about .flex {
 }
 
 .about .txt-about p {
-  margin: 20px 0;
+  margin: 10px 0;
   text-align: justify;
 }
 
