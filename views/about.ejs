@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br"> 
+<%- include('./partials/head.ejs') %>
+
+<body>
+
+    <%- include('./partials/nav.ejs') %>
+
+    <section class="intro-container">
+        <div class="intro-text">
+            <h1>Olá, eu sou o Eduardo</h1>
+            <p>
+                Sou estudante de Engenharia de Computação no Instituto Mauá de Tecnologia. 
+                Atualmente, foco meu desenvolvimento em Python e tecnologias Front-end 
+                (HTML, CSS e JavaScript). Também possuo conhecimentos fundamentais em C e C++, 
+                além de inglês básico para leitura e estudos técnicos. Sou apaixonado por tecnologia 
+                e estou constantemente aprimorando minhas habilidades para criar soluções inovadoras.
+            </p>
+        </div>
+        <div class="intro-image">
+            <img src="/images/man/top-web-img.png" alt="Eduardo">
+        </div>
+    </section>
+
+    <div>
+        <img class="banner" src="images/banner/imt.jpg" alt="banner IMT">
+    </div>
+
+    <section class="specialties-section">
+        <h2 class="section-title">MINHAS <span>ESPECIALIDADES.</span></h2>
+        
+        <div class="cards-container">
+            <div class="specialty-card">
+                <i class="devicon-python-plain colored"></i><h3>Python</h3>
+                <ul>
+                    <li>Automações de Documentos(Pyautogui e Selenium)</li>
+                    <li>Interface gráfica(Kivy/kivymd, Pygame)</li>
+                    <li>Transformar código em executável(.exe)</li>
+                    <li>Ferramentas matemáticas (Simpy e numpy)</li>
+                    <li>Raspberry Pi</li>
+                </ul>
+            </div>
+
+            <div class="specialty-card">
+                <i class="devicon-javascript-plain colored"></i>
+                <h3>Front-End</h3>
+                <ul>
+                    <li>HTML, CSS</li>
+                    <li>JavaScript</li>
+                    <li>Node js (express, .ejs, localhost, npm)</li>
+                </ul>
+            </div>
+
+            <div class="specialty-card">
+                <i class="devicon-cplusplus-plain colored"></i>
+                <h3>C e C++</h3>
+                <ul>
+                    <li>Básico</li>
+                    <li>Arduino</li>
+                </ul>
+            </div>
+
+            <div class="specialty-card">
+                <i class="fa-solid fa-language"></i>
+                <h3>Idioma</h3>
+                <ul class="languages">
+                    <li><strong>Português:</strong> Nativo</li>
+                    <li><strong>Inglês:</strong> Básico (Leitura técnica)</li>
+                </ul>   
+            </div>
+
+            <div class="specialty-card">
+                <i class="fa-solid fa-file-word" style="color: #2b579a;"></i>  
+                <h3>Office</h3>
+                <p>Documentações em planilhas, txt, word, canvas, powerpoint e muito mais.</p>
+            </div>
+
+            <div class="specialty-card">
+                <i class="fa-solid fa-cube"></i>
+                <h3>Modelagem 2D e 3D</h3>
+                <ul>
+                    <li>Autocad</li>
+                    <li>Blender</li>
+                    <li>SolidWorks</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <%- include('./partials/footer.ejs') %>
+</body>
+</html>

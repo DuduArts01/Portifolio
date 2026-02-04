@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    overflow-x: hidden; /* This is your "safety net" to stop horizontal scrolling */
+}
+
+body{ 
+    max-width: 100%;
+    font-family: 'Noto Serif', serif;
+    background-color: black;
+}
+
+p, h1, h2, h3, a, ul{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+/* nav & footer styles */
+nav{
+    display: flex;
+    justify-content: space-between;
+    margin: 0 40px;
+    margin-bottom: 60px;
+    padding: 0 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+    text-transform: uppercase;
+}
+
+nav ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+nav li{
+    list-style-type: none;
+    margin-left: 20px;
+}
+
+nav h1{
+    font-size: 3em;
+}
+
+nav p, nav a{
+    color: #777;
+    font-weight: 300;
+}
+
+nav a:hover{
+    color: rgba(255, 255, 255, 0.923);
+    padding: 5px 0px;
+    animation-duration: 2000ms;
+}
+
+h2{
+    margin-bottom: 40px;
+}
+
+h3{
+    text-transform: capitalize;
+    margin-bottom: 8px;
+}
+
+.content{
+    margin-left: 20px;
+}
+
+/* General Banner*/
+.banner{
+    max-width: 100%;
+}
+
+/* video animation */
+.hero-video {
+    width: 100%;           /* Full width */
+    height: 70vh;          /* 60% of the screen height */
+    object-fit: cover;     /* Crops the video to fit the area without stretching */
+    display: block;
+}
+
+
+/* About */
+.intro-container {
+    display: flex;
+    align-items: center;      /* Centers items vertically */
+    justify-content: space-around; /* Adds space between them */
+    padding: 50px;
+    width: 100%;              /* Matches your full-width goal */
+}
+
+.intro-text {
+    flex: 1;                  /* Takes up half the space */
+    padding-right: 20px;
+}
+
+.intro-image {
+    flex: 1;                  /* Takes up the other half */
+    text-align: center;
+}
+
+.intro-image img {
+    max-width: 400px;         /* Keeps the image from getting too big */
+    border-radius: 10px;      /* Optional: makes corners soft */
+}
+    
+    /* Especiality */
+.specialties-section {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #000; /* Matching your black theme */
+    color: #fff;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+}
+
+.section-title span {
+    color: #ff0000; /* Your DuduTech Red */
+}
+
+.cards-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.specialty-card {
+    background-color: #0a0a0a;
+    border: 2px solid #222; /* Dark border by default */
+    border-radius: 15px;
+    padding: 30px;
+    width: 300px;
+    transition: all 0.4s ease; /* Smooth transition for the hover */
+    cursor: pointer;
+}
+
+/* ✨ The "Brilliant White" Hover Effect */
+.specialty-card:hover {
+    border-color: #ffffff; 
+    box-shadow: 0px 0px 20px 5px rgba(255, 255, 255, 0.4); /* White glow */
+    transform: translateY(-10px); /* Slight lift up */
+}
+
+.specialty-card h3 {
+    margin: 20px 0;
+    font-size: 1.5rem;
+}
+
+.specialty-card p {
+    color: #ccc;
+    line-height: 1.6;
+}
+
+.specialty-card i {
+    font-size: 50px; /* Makes icons large */
+    margin-bottom: 15px;
+    display: block;
+    color: #ff0000; /* Sets them to your DuduTech red by default */
+}
+
+/* If you want the icons to show their original brand colors */
+.specialty-card .colored {
+    color: unset; 
+}
