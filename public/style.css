@@ -9,6 +9,7 @@
 html, body {
     width: 100%;
     overflow-x: hidden; /* This is your "safety net" to stop horizontal scrolling */
+    scroll-behavior: smooth;
 }
 
 body{ 
@@ -87,6 +88,111 @@ h3{
     object-fit: cover;     /* Crops the video to fit the area without stretching */
     display: block;
 }
+
+/* Index */
+.projects-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;    /* This centers the H2 and the Carousel */
+    padding: 60px 0;
+    text-align: center;     /* Ensures text inside H2 stays centered */
+}
+
+/* Ensure the title has the proper margin */
+.projects-section h2 {
+    font-size: 2.5rem;      /* Matches your section-title size */
+    margin-bottom: 40px;
+    text-transform: uppercase;
+}
+
+.projects-section h2 span {
+    color: #ff0000;
+}
+
+/* The horizontal scroll area */
+.carousel-container {
+    display: flex;
+    gap: 30px;
+    overflow-x: auto;
+    padding: 60px 40px; /* Crucial: Space for the 1.1x scale growth */
+    scrollbar-width: none;
+}
+
+/* 1. Add a smooth transition to the base card */
+.project-card {
+    min-width: 320px;
+    background-color: #0a0a0a;
+    border-radius: 15px;
+    overflow: hidden;
+    /* Start with a subtle, dark border */
+    border: 1px solid #222; 
+    /* Smooth transition for the 'growing' glow */
+    transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+    cursor: pointer;
+}
+
+/* 2. The Animation State */
+.project-card:hover {
+    transform: scale(1.05); /* Card grows slightly */
+    border-color: #ffffff;  /* Border turns bright white */
+    /* This creates the 'Growing White' glow around the card */
+    box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.6), 
+                0px 0px 40px rgba(255, 255, 255, 0.2); 
+    z-index: 10;
+}
+
+.project-card img {
+    width: 100%;      /* Fits the 300px width of the card */
+    height: 200px;     /* Forces the height to be small */
+    object-fit: cover; /* Crops the image so it doesn't stretch */
+    display: block;
+}
+
+/* 3. Bonus: Zoom effect on the image inside */
+.project-card:hover img {
+    transform: scale(1.1);
+    filter: brightness(1.1);
+}
+
+.project-card img {
+    transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+.project-info {
+    padding: 15px;
+    color: white;
+}
+
+/* 1. The Title: Making it a Red-to-White Gradient */
+.project-info h3 {
+    margin-bottom: 10px;
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #ffffff; /* Start with clean white */
+    text-transform: uppercase;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+    background: none !important; /* This kills the 'red range' */
+    -webkit-background-clip: initial !important;
+    -webkit-text-fill-color: initial !important;
+}
+
+/* ✨ Interactive Change: Title glows more on hover */
+.project-card:hover .project-info h3 {
+    color: #ff0000; 
+    /* Reduced the spread and the intensity of the red shadow */
+    text-shadow: 0px 0px 6px rgba(255, 0, 0, 0.6); 
+    transition: 0.4s ease; /* Makes the glow appear more slowly */
+}
+
+/* 2. The Snippet: Making it clean and readable */
+.project-info p {
+    background: none;
+    color: #cccccc;
+    border-left: 3px solid #ff0000;
+    padding-left: 12px;
+}
+
 
 
 /* About */
@@ -174,4 +280,63 @@ h3{
 /* If you want the icons to show their original brand colors */
 .specialty-card .colored {
     color: unset; 
+}
+
+/* footer */
+footer {
+    background-color: #000;
+    color: #fff;
+    padding: 60px 10% 20px 10%; /* Espaçamento interno lateral */
+    border-top: 1px solid #222;
+    width: 100%;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between; /* Espalha as colunas */
+    align-items: flex-start;
+    flex-wrap: wrap; /* Permite quebrar linha no mobile */
+    gap: 40px;
+}
+
+.footer-brand h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.footer-brand h3 span {
+    color: #ff0000; /* Vermelho DuduTech */
+}
+
+.footer-edu h4, .footer-social h4 {
+    color: #ff0000;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 20px;
+}
+
+.social-icons a {
+    color: #fff;
+    font-size: 1.5rem;
+    transition: 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #ff0000;
+    transform: translateY(-5px);
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid #111;
+    color: #555;
+    font-size: 0.8rem;
 }

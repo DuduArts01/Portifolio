@@ -12,6 +12,23 @@
         </video>
     </div>
 
+    <section class="projects-section">
+        <h2>MEUS <span>PROJETOS</span></h2>
+        <div class="carousel-container">
+            <% if (projects.length > 0) { %>
+            <% projects.forEach(project => { %>
+                <div class="project-card">
+                <img src="<%= project.images[0] %>" alt="Project Image">
+                <div class="project-info">
+                    <h3><%= project.title %></h3>
+                    <p><%= project.snippet %></p>
+                </div>
+                </div>
+            <% }) %>
+            <% } %>
+        </div>
+    </section>
+
     <%- include('./partials/footer.ejs') %>
 </body>
 </html>
