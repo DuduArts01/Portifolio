@@ -5,26 +5,34 @@
     
     <%- include('./partials/nav.ejs') %>
 
+    <header class="hero-intro">
+        <div class="intro-content">
+            <h2 class="pre-title">ENGENHARIA & INOVAÇÃO</h2>
+            <h1 class="main-motivation">"O ESPIRÍTO HUMANO PRECISA PREVALECER <span class="highlight">SOBRE A TECNOLOGIA."</span> <span class="quote-author">- ALBERT EINSTEIN</span></h1>
+            <p class="sub-motivation">A essência humana impulsiona a tecnologia rumo à inovação.</p>
+            <div class="line-decorator"></div>
+        </div>
+    </header>
+
     <div>
-        <video autoplay muted loop playsinline class="hero-video">
-            <source src="/animation/digital_numbers.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
+        <img src="images/banner/banner_index.png" alt="banner" class="banner">
     </div>
 
     <section class="projects-section">
         <h2>MEUS <span>PROJETOS</span></h2>
         <div class="carousel-container">
             <% if (projects.length > 0) { %>
-            <% projects.forEach(project => { %>
-                <div class="project-card">
-                <img src="<%= project.images[0] %>" alt="Project Image">
-                <div class="project-info">
-                    <h3><%= project.title %></h3>
-                    <p><%= project.snippet %></p>
-                </div>
-                </div>
-            <% }) %>
+                <% projects.forEach(project => { %>
+                    <a href="/projects/<%= project._id %>" class="project-card text-only">
+                        <div class="project-info">
+                            <h3><%= project.title %></h3>
+                            <p><%= project.snippet %></p>
+                            <span class="view-project">Ver Projeto →</span>
+                        </div>
+                    </a>
+                <% }) %>
+            <% } else { %>
+                <p class="no-projects">Nenhum projeto encontrado.</p>
             <% } %>
         </div>
     </section>

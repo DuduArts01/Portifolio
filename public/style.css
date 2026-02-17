@@ -77,33 +77,99 @@ h3{
 }
 
 /* General Banner*/
-.banner{
-    max-width: 100%;
-}
-
-/* video animation */
-.hero-video {
-    width: 100%;           /* Full width */
-    height: 70vh;          /* 60% of the screen height */
-    object-fit: cover;     /* Crops the video to fit the area without stretching */
-    display: block;
+.banner {
+    width: 100%;
+    height: 70vh;
+    background-image: url('/images/your-new-banner.png');
+    
+    /* This makes the image fill the entire width without distorting */
+    background-size: cover;
+    
+    /* This keeps the laptop and text centered */
+    background-position: center;
+    
+    /* Ensures no repeating if the screen is very wide */
+    background-repeat: no-repeat;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* Index */
+/*
+header
+*/
+.hero-intro {
+    padding: 80px 10% 60px; /* Wider side padding for better text flow */
+    text-align: left; /* Alignment to the left looks more modern for mission statements */
+    background-color: #000;
+}
+
+.pre-title {
+    color: #ff0000;
+    font-size: 0.9rem;
+    letter-spacing: 5px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.main-motivation {
+    font-family: 'Georgia', serif; /* Elegant for quotes */
+    font-style: italic;
+    font-size: 3.5rem;
+    line-height: 1.1;
+    font-weight: 900;
+    color: #fff;
+    max-width: 900px;
+    margin-bottom: 20px;
+}
+
+.main-motivation .highlight {
+    color: #ff0000;
+}
+
+.sub-motivation {
+    color: #888;
+    font-size: 1.2rem;
+    max-width: 600px;
+    line-height: 1.6;
+}
+
+.line-decorator {
+    width: 80px;
+    height: 4px;
+    background-color: #ff0000;
+    margin-top: 30px;
+}
+
+.quote-author{
+    color: #fff;
+    font-style: normal;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+}
+
+/*
+My Projects in the index 
+*/
+/* The main section container */
 .projects-section {
     width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;    /* This centers the H2 and the Carousel */
+    align-items: center;    
     padding: 60px 0;
-    text-align: center;     /* Ensures text inside H2 stays centered */
+    text-align: center;     
 }
 
-/* Ensure the title has the proper margin */
 .projects-section h2 {
-    font-size: 2.5rem;      /* Matches your section-title size */
+    font-size: 2.5rem;      
     margin-bottom: 40px;
     text-transform: uppercase;
+    color: #fff;
 }
 
 .projects-section h2 span {
@@ -115,84 +181,64 @@ h3{
     display: flex;
     gap: 30px;
     overflow-x: auto;
-    padding: 60px 40px; /* Crucial: Space for the 1.1x scale growth */
-    scrollbar-width: none;
+    padding: 60px 40px; 
+    scrollbar-width: none; /* Hides scrollbar on Firefox */
 }
 
-/* 1. Add a smooth transition to the base card */
+.carousel-container::-webkit-scrollbar {
+    display: none; /* Hides scrollbar on Chrome/Safari */
+}
+
+/* 1. Base Card - Updated for Text-Only */
 .project-card {
-    min-width: 320px;
+    min-width: 250px;      /* Slightly narrower */
+    min-height: 160px;     /* Much shorter than before */
     background-color: #0a0a0a;
-    border-radius: 15px;
-    overflow: hidden;
-    /* Start with a subtle, dark border */
+    border-radius: 12px;   /* Slightly sharper corners for a professional look */
     border: 1px solid #222; 
-    /* Smooth transition for the 'growing' glow */
     transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
     cursor: pointer;
+    display: flex;         
+    flex-direction: column;
+    justify-content: center;
+    text-decoration: none; 
+    color: inherit;        
 }
 
-/* 2. The Animation State */
+/* 2. Glow Animation */
 .project-card:hover {
-    transform: scale(1.05); /* Card grows slightly */
-    border-color: #ffffff;  /* Border turns bright white */
-    /* This creates the 'Growing White' glow around the card */
-    box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.6), 
-                0px 0px 40px rgba(255, 255, 255, 0.2); 
+    transform: scale(1.05);
+    border-color: #ffffff;  
+    box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.4); 
     z-index: 10;
 }
 
-.project-card img {
-    width: 100%;      /* Fits the 300px width of the card */
-    height: 200px;     /* Forces the height to be small */
-    object-fit: cover; /* Crops the image so it doesn't stretch */
-    display: block;
-}
-
-/* 3. Bonus: Zoom effect on the image inside */
-.project-card:hover img {
-    transform: scale(1.1);
-    filter: brightness(1.1);
-}
-
-.project-card img {
-    transition: transform 0.5s ease, filter 0.5s ease;
-}
-
+/* 3. Text Info Area */
 .project-info {
-    padding: 15px;
+    padding: 15px 20px;    
     color: white;
 }
 
-/* 1. The Title: Making it a Red-to-White Gradient */
 .project-info h3 {
-    margin-bottom: 10px;
-    font-size: 1.4rem;
+    margin-bottom: 8px;    
+    font-size: 1.3rem;     
     font-weight: 800;
-    color: #ffffff; /* Start with clean white */
     text-transform: uppercase;
-    transition: color 0.3s ease, text-shadow 0.3s ease;
-    background: none !important; /* This kills the 'red range' */
-    -webkit-background-clip: initial !important;
-    -webkit-text-fill-color: initial !important;
 }
 
-/* ✨ Interactive Change: Title glows more on hover */
+/* Title turns Red on hover */
 .project-card:hover .project-info h3 {
     color: #ff0000; 
-    /* Reduced the spread and the intensity of the red shadow */
-    text-shadow: 0px 0px 6px rgba(255, 0, 0, 0.6); 
-    transition: 0.4s ease; /* Makes the glow appear more slowly */
+    text-shadow: 0px 0px 8px rgba(255, 0, 0, 0.5); 
 }
 
-/* 2. The Snippet: Making it clean and readable */
+/* 4. The Snippet Styling */
 .project-info p {
-    background: none;
-    color: #cccccc;
-    border-left: 3px solid #ff0000;
-    padding-left: 12px;
+    font-size: 0.9rem;     
+    line-height: 1.3;
+    border-left: 2px solid #ff0000;
+    padding-left: 10px;
 }
-
 
 
 /* About */
@@ -339,4 +385,307 @@ footer {
     border-top: 1px solid #111;
     color: #555;
     font-size: 0.8rem;
+}
+
+/* Admin */
+/* --- 1. ADMIN FORM STYLE (Fixes the "Add New Project" page) --- */
+/* Container for the Admin Form */
+.create-project-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 40px;
+    background: #000;
+    border: 2px solid #ff4d4d;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.create-project-container h2 {
+    color: #fff;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* Force elements to stack with proper spacing */
+.create-project-container form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 20px; /* Space between each field */
+}
+
+/* Label styling to prevent overlapping */
+.create-project-container label {
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-bottom: 5px; /* Creates space above the input */
+    text-align: left;
+}
+
+/* Make inputs and textarea wrap and fill the container */
+.create-project-container input, 
+.create-project-container textarea {
+    width: 100%; 
+    padding: 15px;
+    background: #1a1a1a;
+    border: 1px solid #333;
+    color: #fff;
+    border-radius: 8px;
+    font-family: inherit;
+    box-sizing: border-box; /* Crucial for proper wrapping */
+}
+
+/* Textarea specific sizing */
+.create-project-container textarea {
+    resize: vertical; /* Allows user to grow the box downwards */
+    min-height: 150px;
+}
+
+.create-project-container button {
+    background: #ff4d4d;
+    color: white;
+    padding: 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-top: 10px;
+    transition: background 0.3s;
+}
+
+.create-project-container button:hover {
+    background: #e60000;
+}
+
+/* details */
+/* Container for the Full Project View */
+.project-details-container {
+    padding: 100px 20px;
+    background-color: #000;
+    min-height: 100vh;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+}
+
+.content-wrapper {
+    max-width: 800px; /* Keeps text from stretching too wide */
+    width: 100%;
+}
+
+.details-title {
+    font-size: 3rem;
+    color: #ff0000; /* Your signature red */
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.details-snippet {
+    font-size: 1.2rem;
+    color: #cccccc;
+    font-style: italic;
+    margin-bottom: 30px;
+}
+
+.divider {
+    border: 0;
+    height: 1px;
+    background: #333;
+    margin-bottom: 40px;
+}
+
+.details-content {
+    font-size: 1.1rem;
+    line-height: 1.8; /* Improves readability for long text */
+    color: #eeeeee;
+    white-space: pre-wrap; /* Crucial: Keeps your line breaks from the textarea */
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 50px;
+    color: #ff0000;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.back-link:hover {
+    letter-spacing: 1px;
+}
+
+/* Projects */
+/* --- PROJECTS PAGE STYLES --- */
+.projects-page-body {
+    background-color: #000;
+}
+
+.all-projects-section {
+    padding: 100px 5%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.header-container {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.header-container h2 {
+    font-size: 3rem;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.header-container h2 span {
+    color: #ff0000;
+}
+
+.header-container p {
+    color: #888;
+    font-size: 1.1rem;
+    margin-top: 10px;
+}
+
+/* Grid Layout */
+.projects-grid {
+    display: grid;
+    /* This creates columns that are at least 320px wide */
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+/* Login */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
+    background-color: #000;
+}
+
+.login-form {
+    background: #111;
+    padding: 40px;
+    border-radius: 8px;
+    border: 1px solid #222;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.login-form h2 {
+    color: #fff;
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+}
+
+.input-group {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    color: #888;
+    margin-bottom: 5px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    background: #000;
+    border: 1px solid #333;
+    color: #fff;
+    border-radius: 4px;
+}
+
+.btn-login {
+    width: 100%;
+    padding: 12px;
+    background-color: #ff0000;
+    color: white;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-login:hover {
+    background-color: #cc0000;
+}
+
+
+/* Mobile adapted */
+
+/* --- TABLET & MOBILE FIXES --- */
+@media screen and (max-width: 768px) {
+    /* 1. Navigation: Stack logo and links */
+    nav {
+        flex-direction: column;
+        align-items: center;
+        margin: 0 10px;
+        gap: 20px;
+    }
+
+    nav ul {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    nav li {
+        margin-left: 0;
+    }
+
+    /* 2. Hero Section: Shrink text so it doesn't break */
+    .main-motivation {
+        font-size: 2.2rem;
+    }
+
+    /* 3. About Page: Stack image and text */
+    .intro-container {
+        flex-direction: column;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .intro-text {
+        padding-right: 0;
+        margin-bottom: 30px;
+    }
+
+    /* 4. Footer: Center everything */
+    .footer-container {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+}
+
+/* --- SMALL MOBILE FIXES --- */
+@media screen and (max-width: 480px) {
+    .main-motivation {
+        font-size: 1.8rem;
+    }
+
+    .header-container h2 {
+        font-size: 2rem;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr; /* Full width cards */
+    }
+
+    .create-project-container {
+        padding: 20px;
+        margin: 20px 10px;
+    }
 }

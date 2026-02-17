@@ -1,0 +1,22 @@
+<%- include('./partials/head.ejs') %>
+
+<body class="details-body">
+    <%- include('./partials/nav.ejs') %>
+
+    <main class="project-details-container">
+        <div class="content-wrapper">
+            <h1 class="details-title"><%= project.title %></h1>
+            <p class="details-snippet"><%= project.snippet %></p>
+            
+            <hr class="divider">
+
+            <div class="details-content">
+                <%= project.body %>
+            </div>
+            
+            <a href="/projects" class="back-link">← Voltar para Projetos</a>
+        </div>
+    </main>
+
+    <%- include('./partials/footer.ejs') %>
+</body>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<%- include('./partials/head.ejs') %>
+<body>
+    <%- include('./partials/nav.ejs') %>
+
+    <main class="create-project-container">
+        <h2>Add New Project</h2>
+
+        <form action="/projects" method="POST"> <div class="form-group">
+                <label for="title">Project Title</label>
+                <input type="text" id="title" name="title" required>
+            </div>
+
+            <div class="form-group">
+                <label for="snippet">Short Snippet</label>
+                <input type="text" id="snippet" name="snippet" required>
+            </div>
+
+            <div class="form-group">
+                <label for="body">Full Description</label>
+                <textarea id="body" name="body" rows="6" required></textarea>
+            </div>
+
+            <button type="submit">Publish to DuduTech</button>
+        </form>
+    </main>
+    <%- include('./partials/footer.ejs') %>
+</body>
+</html>

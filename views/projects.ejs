@@ -1,9 +1,30 @@
-<!DOCTYPE html>
-<html lang="pt-br">
 <%- include('./partials/head.ejs') %>
-<body>    
+
+<body class="projects-page-body">
     <%- include('./partials/nav.ejs') %>
+
+    <section class="all-projects-section">
+        <div class="header-container">
+            <h2>MEU <span>PORTFÓLIO</span> COMPLETO</h2>
+            <p>Explore todos os meus projetos e automações em detalhes.</p>
+        </div>
+
+        <div class="projects-grid">
+            <% if (projects.length > 0) { %>
+                <% projects.forEach(project => { %>
+                    <a href="/projects/<%= project._id %>" class="project-card text-only">
+                        <div class="project-info">
+                            <h3><%= project.title %></h3>
+                            <p><%= project.snippet %></p>
+                            <span class="view-project">Ler Mais →</span>
+                        </div>
+                    </a>
+                <% }) %>
+            <% } else { %>
+                <p class="no-projects">Ainda não há projetos cadastrados.</p>
+            <% } %>
+        </div>
+    </section>
 
     <%- include('./partials/footer.ejs') %>
 </body>
-</html>
