@@ -116,9 +116,8 @@ app.use((req, res) =>{
     res.status(404).render('404', {title: '404'});
 });
 
-// Use the port Render gives you, or 3000 for local testing
 const PORT = process.env.PORT || 3000;
 
-app.listen(PORT, () => {
+app.listen(PORT, '0.0.0.0', () => {
     console.log(`Server is running on port ${PORT}`);
 });
